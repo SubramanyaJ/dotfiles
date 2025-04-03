@@ -1,5 +1,8 @@
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
+# Display Wallpaper
+# exec_always feh --bg-fill /home/sub/misc/ss3.jpg
+
 #// Sets the mod key
 set $mod Mod4
 
@@ -156,6 +159,7 @@ bindsym $mod+r mode "resize"
 bar {
         status_command i3status
 	position top
+        separator_symbol " | "
 }
 
 # My custom keybindings
@@ -186,3 +190,6 @@ bindsym $mod+l exec pcmanfm
 bindsym $mod+Shift+p+o exec shutdown now
 bindsym $mod+Shift+p+t exec reboot
 
+# 9. Kill the wallpaper
+
+bindsym $mod+Shift+w+k exec pkill feh
