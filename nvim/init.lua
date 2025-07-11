@@ -1,3 +1,7 @@
+-- Shoutout to kickstart.nvim!
+-- Use Mason to install you language servers!
+
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -365,7 +369,7 @@ require('lazy').setup({
       },
     },
   },
-  { 'Bilal2453/luvit-meta',  lazy = true },
+  { 'Bilal2453/luvit-meta',    lazy = true },
   {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
@@ -748,19 +752,20 @@ require('lazy').setup({
       }
     end,
   },
-  { 'maxmx03/solarized.nvim' },
+  { 'Tsuzat/NeoSolarized.nvim' },
   { -- You can easily change to a different colorscheme.
     -- Change the name of the colorscheme plugin below, and then
     -- change the command in the config to whatever the name of that colorscheme is.
     --
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'miikanissi/modus-themes.nvim',
+    --  'miikanissi/modus-themes.nvim',
+    'Tsuzat/NeoSolarized.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'quiet'
+      vim.cmd.colorscheme 'NeoSolarized'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
@@ -883,3 +888,6 @@ require('lazy').setup({
 })
 
 vim.opt.guicursor = "n-v-c-i:block"
+vim.cmd.set 'rnu'
+vim.cmd.set 'nofixeol'
+vim.cmd.set 'nofixendofline'

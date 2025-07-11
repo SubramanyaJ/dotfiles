@@ -1,8 +1,8 @@
 # class                 border  bground text    indicator child_border
-client.focused          #003535 #003535 #000000 #2E9EF4   #003535
-client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
-client.unfocused        #333333 #222222 #888888 #292D2E   #222222
-client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
+client.focused          #002020 #002020 #FFFFFF #000000   #002020
+client.focused_inactive #000000 #000000 #FFFFFF #000000   #000000
+client.unfocused        #000000 #000000 #FFFFFF #000000   #000000
+client.urgent           #2F343A #900000 #FFFFFF #000000   #900000
 client.placeholder      #000000 #0C0C0C #FFFFFF #000000   #0C0C0C
 
 client.background       #FFFFFF
@@ -11,6 +11,7 @@ client.background       #FFFFFF
 # exec_always feh --bg-center ~/Downloads/void.jpg
 
 exec kitty zsh
+exec redshift -P -O 2850
 
 #// Sets the mod key
 set $mod Mod4
@@ -158,7 +159,7 @@ bar {
                                 statusline #FFFFFF
                                 separator  #AAAAAA
 
-                                focused_workspace  #4C7899 #004040 #FFFFFF
+                                focused_workspace  #4C7899 #002020 #FFFFFF
                                 active_workspace   #333333 #000000 #FFFFFF
                                 inactive_workspace #333333 #000000 #888888
                                 urgent_workspace   #2F343A #900000 #FFFFFF
@@ -188,4 +189,4 @@ bindsym $mod+i exec i3lock -c 000000
 bindsym $mod+l exec pcmanfm
 
 # 8. Shutdown
-bindsym $mod+Shift+p exec shutdown +0
+bindsym $mod+Shift+p exec sudo poweroff
