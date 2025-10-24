@@ -1,11 +1,11 @@
 # Subramanya's dotfiles
 
-![Neofetch screenshot](./.assets/neofetch.jpg)
+![fastfetch screenshot](./.assets/fastfetch.jpg)
 
 ## Usage
 
 Use with proper care (and at your own risk!)
 
-The `dependencies.txt` file notes the dependencies required.
+```curl https://github.com/SubramanyaJ/dotfiles | bash``` does the trick on a fresh Debian 13 installation.
 
 I'm mostly keeping this here so that I can clone this around on all the computers in the computer lab XD.

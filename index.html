@@ -1,0 +1,58 @@
+### Essentials
+sudo apt install --assume-yes git pavucontrol pulseaudio network-manager ssh vim ssh curl wget file lshw strace tree bat fd-find grub-customizer calcurse
+
+# Utilities
+sudo apt install --assume-yes zoxide fzf powertop tlp git-delta delta ripgrep fastfetch redshift vainfo ffmpeg firefox-esr w3m newsboat nmap aria2 unrar-free bc unzip gzip  gping htop libtool autoconf automake gettext
+
+# Fonts
+sudo apt install --assume-yes fonts-knda fonts-firacode fonts-powerline
+
+# Office tools
+sudo apt install --assume-yes libreoffice zathura pdftk
+
+# Window Manager and co
+sudo apt install --assume-yes i3-wm xinit xorg rofi flameshot kitty pcmanfm i3lock xclip
+
+# Development
+sudo apt install --assume-yes gdb gcc clang nodejs npm doxygen graphviz make cmake ninja-build pkg-config build-essential nasm
+
+# Shell
+sudo apt install --assume-yes zsh
+
+echo "\n==================================="
+echo "All dependencies have been installed."
+echo "===================================\n"
+
+rm -fr ~/.config/*
+rm -fr ~/.zshrc
+cd ~
+git clone https://github.com/SubramanyaJ/dotfiles.git
+cd dotfiles
+cp -r i3 i3status kitty newsboat nvim rofi zathura ~/.config/
+cp ./.zshrc ~/.zshrc
+cd ~
+
+echo "\n======================================="
+echo "All configuration files have been set up."
+echo "\n======================================="
+
+zoxide init zsh
+
+npm install -g tree-sitter-cli
+
+git clone https://github.com/neovim/neovim.git
+cd neovim
+make CMAKE_BUILD_TYPE=RelWithDebInfo
+sudo make install
+cd ~
+
+read -p "Do you want to install TeXLive packages? (y/n): " ANSWER
+if [[ "$ANSWER" =~ ^[Yy]$ ]]; then
+	sudo apt install --assume-yes texlive texlive-base texlive-bibtex-extra texlive-fonts-recommended texlive-latex-recommended texlive-lang-english texlive-formats-extra
+fi
+
+echo "\nGit"
+read -p "Enter your Git user name: " GIT_NAME
+read -p "Enter your Git email: " GIT_EMAIL
+git config --global user.name "$GIT_NAME"
+git config --global user.email "$GIT_EMAIL"
