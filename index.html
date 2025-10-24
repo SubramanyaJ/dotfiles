@@ -19,9 +19,9 @@ sudo apt install --assume-yes gdb gcc clang nodejs npm doxygen graphviz make cma
 # Shell
 sudo apt install --assume-yes zsh
 
-echo "\n==================================="
-echo "All dependencies have been installed."
-echo "===================================\n"
+echo -e "\n==================================="
+echo -e "All dependencies have been installed."
+echo -e "===================================\n"
 
 rm -fr ~/.config/*
 rm -fr ~/.zshrc
@@ -32,9 +32,9 @@ cp -r i3 i3status kitty newsboat nvim rofi zathura ~/.config/
 cp ./.zshrc ~/.zshrc
 cd ~
 
-echo "\n======================================="
-echo "All configuration files have been set up."
-echo "\n======================================="
+echo -e "\n======================================="
+echo -e "All configuration files have been set up."
+echo -e "\n======================================="
 
 zoxide init zsh
 
@@ -51,7 +51,7 @@ if [[ "$ANSWER" =~ ^[Yy]$ ]]; then
 	sudo apt install --assume-yes texlive texlive-base texlive-bibtex-extra texlive-fonts-recommended texlive-latex-recommended texlive-lang-english texlive-formats-extra
 fi
 
-echo "\nGit"
+echo -e "\nGit"
 read -p "Enter your Git user name: " GIT_NAME
 read -p "Enter your Git email: " GIT_EMAIL
 git config --global user.name "$GIT_NAME"
