@@ -1,0 +1,12 @@
+set clipboard=unnamedplus
+set nu
+set rnu
+set incsearch
+set nohlsearch
+set autoindent
+syntax on
+set background=dark
+colo quiet
+
+let mapleader = " "
+nnoremap <leader>q :q!<CR>

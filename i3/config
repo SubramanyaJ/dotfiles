@@ -10,8 +10,8 @@ client.background       #FFFFFF
 # Display Wallpaper
 # exec_always feh --bg-center ~/Downloads/void.jpg
 
-exec kitty zsh
-exec redshift -P -O 2850
+exec kitty
+# exec redshift -P -O 2850
 
 #// Sets the mod key
 set $mod Mod4
@@ -38,7 +38,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec kitty zsh
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -171,7 +171,7 @@ bar {
 # My custom keybindings
 
 # 1. Browser
-bindsym $mod+b exec firefox
+bindsym $mod+b exec librewolf
 
 # 2. Screenshot
 bindsym $mod+t exec flameshot

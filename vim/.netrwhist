@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/home/sub/probe/dwm'
+let g:netrw_dirhist_5='/home/sub/probe/hello-vite/src'
+let g:netrw_dirhist_4='/home/sub/probe/hello-vite'
+let g:netrw_dirhist_3='/home/sub/probe/hello-vite/public'
+let g:netrw_dirhist_2='/home/sub/probe/reactapp/src'
+let g:netrw_dirhist_1='/home/sub/.config/newsboat'
