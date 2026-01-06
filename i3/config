@@ -10,7 +10,7 @@ client.background       #FFFFFF
 # Display Wallpaper
 # exec_always feh --bg-center ~/Downloads/void.jpg
 
-exec kitty
+exec kitty tmux
 # exec redshift -P -O 2850
 
 #// Sets the mod key
@@ -171,10 +171,10 @@ bar {
 # My custom keybindings
 
 # 1. Browser
-bindsym $mod+b exec librewolf
+bindsym $mod+b exec firefox
 
 # 2. Screenshot
-bindsym $mod+t exec flameshot
+bindsym $mod+Shift+s exec flameshot
 
 # 3. Border
 bindsym $mod+n border toggle
@@ -190,3 +190,12 @@ bindsym $mod+l exec pcmanfm
 
 # 8. Shutdown
 bindsym $mod+Shift+p exec poweroff
+
+# 8. Newsboat
+bindsym $mod+m exec kitty newsboat
+
+# 9. NetworkManager TUI
+bindsym $mod+k exec kitty nmtui
+
+# Open todo file
+bindsym $mod+t exec kitty vim ~/.todo

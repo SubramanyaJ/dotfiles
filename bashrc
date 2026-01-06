@@ -1,9 +1,7 @@
-# Uncomment the stuff here as needed.
-
 # Start the window manager
-# if [[ -z "$TMUX" && -z "$DISPLAY" && "$(tty)" == "/dev/tty1" ]]; then
-#        startx
-# fi
+if [[ -z "$TMUX" && -z "$DISPLAY" && "$(tty)" == "/dev/tty1" ]]; then
+        startx
+fi
 
 # If not running interactively, don't do anything
 # For shell scripts, this causes return
@@ -15,14 +13,11 @@ shopt -s histappend
 HISTSIZE=1000
 HISTFILESIZE=2000
 
-eval "$(zoxide init bash)"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Always install fzf from the installer script.
-# [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 # Get git status
 if [ -f /usr/lib/git-core/git-sh-prompt ]; then
@@ -45,18 +40,31 @@ printf '\e]12;rgb:80/80/80\a'
 shopt -s progcomp
 # update the values of LINES and COLUMNS after each command
 shopt -s checkwinsize
-# Set vi mode : Commented out for safety of any unsuspecting user.
-# set -o vi
+# Set vi mode
+set -o vi
 
 # Aliases
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias vi='vim'
 alias bat="batcat"
+alias kmon="sudo $(which kmon)"
+alias netscanner="sudo $(which netscanner)"
 alias sx="startx"
 alias xclip="xclip -selection clipboard"
+alias mux="tmuxinator"
 
 alias aptin="apt-cache pkgnames | fzf --multi --cycle --reverse --preview \"apt-cache show {1}\" --preview-window=:57%:wrap:hidden --bind=space:toggle-preview | xargs -ro sudo apt install"
+alias aptre="apt-cache pkgnames | fzf --multi --cycle --reverse --preview \"apt-cache show {1}\" --preview-window=:57%:wrap:hidden --bind=space:toggle-preview | xargs -ro sudo apt remove"
+
+# export LANG=C
+# export LC_ALL=en_US.UTF-8
 
 export PAGER='less'
 export EDITOR='vim'
+. "$HOME/.cargo/env"
+
+PATH=$PATH:/opt/go/bin
+PATH=$PATH:~/.local/bin
+
+eval "$(zoxide init bash)"

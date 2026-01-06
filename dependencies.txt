@@ -60,6 +60,7 @@ tree
 unrar-free
 vainfo
 vim
+vlc
 w3m
 wget
 xclip
